@@ -11,7 +11,8 @@ if not verificar_json(ruta):
     espacios = [{}]
     json_nuevo = "espacios_de_trabajo.json"
     #CREAR EL JSON
-
+    with open(ruta, 'w', encoding='utf-8') as archivo:
+        json.dump(espacios, archivo, indent=4, ensure_ascii=False)
     print("Cree su primer espacio de trabajo")
 else:
     print("Seleccione su espacio de trabajo en el que desea trabajar")

@@ -1,0 +1,14 @@
+[
+    {
+    "nombre":"Tareas de la universidad",
+    "porHacer":["separar materias", "tp de logica", "tp de matematicas"],
+    "enProceso":["Punto 1 tp fundamentos"],
+    "terminado":["tp de introduccion a la cultura", "tp de arquitectura"]
+    },
+    {
+    "nombre":"tareas de casa",
+    "porHacer":["limpiar habitacion", "tender la ropa", "meal prep para la semana"],
+    "enProceso":["lavar los trastes", "lavar ropa"],
+    "terminado":["sacar la basura"]
+    }
+]

@@ -1,6 +1,7 @@
 import json
 from pathlib import Path
 from pages.mostrar import mostrar_espacios
+import time
 #Verificar si existe el JSON, para saber si en el primer uso lo crea 
 def verificar_json(ruta_del_json):
     return ruta_del_json.exists()
@@ -18,17 +19,20 @@ else:
         data = json.load(archivo)
 
 print("Bienvenido a la aplicación de gestión de espacios de trabajo.")
-print("Quiere trabajar en un espacio de trabajo existente? (s/n)")
-respuesta = input().strip().lower()
+respuesta = input("Quiere trabajar en un espacio de trabajo existente? (s/n): ").strip().lower()
 if respuesta == 's':
+    time.sleep(1)
     print("Cargando espacios de trabajo...")
+    time.sleep(2)
     print("Seleccione un espacio de trabajo:")
+    time.sleep(1)
     mostrar_espacios(data)
     num_espacio = input("Ingrese el número del espacio de trabajo: ")
     #AGREGAR LÓGICA PARA TRABAJAR  CON TABLEROS DEL ESPACIO DE TRABAJO
 
 else:
-    respuesta = input("Quiere [c]rear un nuevo espacio de trabajo? o [b]orrar uno? c/b").strip().lower()
+    time.sleep(1)
+    respuesta = input("Quiere [c]rear un nuevo espacio de trabajo? o [b]orrar uno? c/b: ").strip().lower()
     if(respuesta == 'b'):
         print("Borrar un espacio de trabajo.")
         mostrar_espacios(data)

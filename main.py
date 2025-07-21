@@ -4,19 +4,18 @@ from pages.mostrar import mostrar_espacios
 import time
 #Verificar si existe el JSON, para saber si en el primer uso lo crea 
 
+ruta = Path("espacios")/"espacios_de_trabajo.json"
+ruta.parent.mkdir(parents=True, exist_ok=True)
+
 def verificar_json(ruta_del_json):
     return ruta_del_json.exists()
 #Creando la ruta donde debe estar el JSON
-ruta = Path("espacios")/"espacios_de_trabajo.json"
-
 if not verificar_json(ruta):
     espacios = []
-    json_nuevo = "espacios_de_trabajo.json"
     #CREAR EL JSON
     with open(ruta, 'w', encoding='utf-8') as archivo:
         json.dump(espacios, archivo, indent=4, ensure_ascii=False)
 else:
-    ruta = Path("espacios")/"espacios_de_trabajo.json"
     with open(ruta, 'r',encoding='utf-8') as archivo:
         data = json.load(archivo)
 

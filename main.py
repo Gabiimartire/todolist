@@ -3,8 +3,10 @@ from pathlib import Path
 from pages.mostrar import mostrar_espacios
 import time
 #Verificar si existe el JSON, para saber si en el primer uso lo crea 
+
 def verificar_json(ruta_del_json):
     return ruta_del_json.exists()
+#Creando la ruta donde debe estar el JSON
 ruta = Path("espacios")/"espacios_de_trabajo.json"
 
 if not verificar_json(ruta):
